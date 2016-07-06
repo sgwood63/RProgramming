@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "read.csv(\"hw1_data.csv\")\nhw1 <-read.csv(\"hw1_data.csv\")\nview(hw1)\nView(hw1)\nhw1[1:2,]\nhw1[47,]\nnrow(hw1)\nhw1[nrow(hw1)-1:nrow(hw1),]\nhw1[nrow(hw1),]\nhw1[nrow(hw1)-1,]\nhw1[nrow(hw1)-1:nrow(hw1),]\nhw1[(nrow(hw1)-1):nrow(hw1),]\nhw1$Ozone\nhw1$Ozone[is.na(x)]\noz <- hw1$Ozone\noz[is.na(oz)]\nNAoz <- oz[is.na(oz)]\nattr(NAoz)\nattributes(NAoz)\nlength(NAoz)\nvalidOz <- oz[!is.na(oz)]\nvalidOz\nmean(validOz)\nhw1[Ozone > 31 && Temp > 90]\nhw1[hw1$Ozone > 31 && hw1$Temp > 90]\nhw1[hw1$Ozone > 31 & hw1$Temp > 90]\nhw1[hw1$Ozone > 31]\nsubset(hw1, Ozone > 31)\nsubset(hw1, Ozone > 31 & Temp > 90)\nhiOzTemp <- subset(hw1, Ozone > 31 & Temp > 90)\nmean(hiOzTemp$Solar.R)\nmonth6 <- subset(hw1, Month = 6)\nmonth6 <- subset(hw1, Month == 6)\nmonth6\nmean(month6$Temp)\nmonth5 <- subset(hw1, Month == 5)\nmax(month5$Ozone)\nView(month5)\nView(month5)\nmonth5Valid <- month5[!is.na(month5$Ozone)]\nmonth5ValidOz <- month5$Ozone\nmonth5ValidOz <- month5$Ozone[!is.na(month5$Ozone)]\nmean(month5ValidOz)\nmax(month5ValidOz)\nsavehistory(\"~/GitHub/RProgramming/Week1History.hist\")\n",
+    "created" : 1467731579706.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3263444918",
+    "id" : "EB3BF882",
+    "lastKnownWriteTime" : 1467683612,
+    "last_content_update" : 1467731713453,
+    "path" : "~/GitHub/RProgramming/Week1History.R",
+    "project_path" : "Week1History.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

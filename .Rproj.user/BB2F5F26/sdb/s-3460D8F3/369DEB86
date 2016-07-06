@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "?read.table\n?mean\n?list.files\nlist.files(\"specdata\", \"*.csv\")\nmean(c(1,2,3,4,5,6,7))\nr001 <- read.csv(\"specdata/001.csv\")\nView(r001)\nView(r001)\nnrows(r001)\nnrow(r001)\nreadings <- r001$sulfate[!is.na(r001$sulfate)]\nmean(readings)\nsum(readings)\nlength(readings)\nsource(\"Week2Assignment.R\")\npollutantmean(\"specdata\", \"sulfate\", 1:5)\nsource(\"Week2Assignment.R\")\nsource(\"Week2Assignment.R\")\npollutantmean(\"specdata\", \"sulfate\", 1:5)\npollutantmean(\"specdata\", \"sulfate\", 1:5)\npollutantmean(\"specdata\", \"sulfate\", 1:5)\nsource(\"Week2Assignment.R\")\nsource(\"Week2Assignment.R\")\npollutantmean(\"specdata\", \"sulfate\", 1:5)\nsource(\"Week2Assignment.R\")\npollutantmean(\"specdata\", \"sulfate\", 1:5)\nsource(\"Week2Assignment.R\")\nsource(\"Week2Assignment.R\")\npollutantmean(\"specdata\", \"sulfate\", 1:5)\n?paste\nsource(\"Week2Assignment.R\")\npollutantmean(\"specdata\", \"sulfate\", 1:5)\nsource(\"Week2Assignment.R\")\npollutantmean(\"specdata\", \"sulfate\", 1:5)\nsource(\"Week2Assignment.R\")\npollutantmean(\"specdata\", \"sulfate\", 1:5)\npollutantmean(\"specdata\", \"sulfate\", 1:1)\npollutantmean(\"specdata\", \"sulfate\")\npollutantmean(\"specdata\", \"nitrate\")\nsource(\"Week2Assignment.R\")\npollutantmean(\"specdata\", \"nitrate\")\nsource(\"Week2Assignment.R\")\npollutantmean(\"specdata\", \"nitrate\")\npollutantmean(\"specdata\", \"sulfate\")\nsource(\"Week2Assignment.R\")\npollutantmean(\"specdata\", \"sulfate\", 1:10)\npollutantmean(\"specdata\", \"nitrate\", 70:72)\npollutantmean(\"specdata\", \"nitrate\", 23)\nsavehistory(\"~/GitHub/RProgramming/Week2Assignment1History.R\")\n",
+    "created" : 1467740397757.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3741634548",
+    "id" : "369DEB86",
+    "lastKnownWriteTime" : 1467738441,
+    "last_content_update" : 1467738441,
+    "path" : "~/GitHub/RProgramming/Week2Assignment1History.R",
+    "project_path" : "Week2Assignment1History.R",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

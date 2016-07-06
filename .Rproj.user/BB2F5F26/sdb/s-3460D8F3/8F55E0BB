@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# The mean of a pollutant (sulfate or nitrate) across a specified list of monitors\n\npollutantmean <- function(directory, pollutant, id = 1:332) {\n  # directory: name of directory containing readings files\n  # pollutant: nitrate or sulfate\n  # id: id range of files. Files are named id.csv, with id zero filled to\n  #     3 positions, ie. 001.csv, 020,csv, 134.csv\n  # readings files are assumed to be csvs with columns:\n  #     Date \"YYYY-MM-DD\"\n  #     sulfate: empty (NA) or float\n  #     nitrate: empty (NA) or float\n  #     id: id of this sensor. 1-332 in test data set\n  \n  currentSum <- 0; currentCount <- 0\n  \n  # loop through the ids\n  \n  for (currentId in id) {\n    \n    # Generate the file name for the id\n    if (currentId < 1 || currentId > 332) {\n      print(paste(\"Invalid id:\", currentId))\n      break\n    } else if (currentId < 10) {\n      currentIdString <- paste0(c(\"00\", as.character(currentId)), collapse='')\n    } else if (currentId < 100) {\n      currentIdString <- paste0(c(\"0\", as.character(currentId)), collapse='')\n    } else {\n      currentIdString <- as.character(currentId)\n    }\n    \n    # create the full file name and path. check existence\n    \n    fileName <- paste0(c(directory, \"/\", currentIdString, \".csv\"), collapse='')\n    if (!file.exists(fileName)) {\n      print(paste(\"File does not exist: \", fileName))\n      break\n    }\n    \n    # load the file into a frame\n    frame <- read.csv(fileName)\n    \n    # get the valid readings for the pollutant\n    readings <- frame[[pollutant]][!is.na(frame[[pollutant]])]\n    \n    # keep running sum of readings and count for final calculation\n    currentSum <- currentSum + sum(readings)\n    currentCount <- currentCount + length(readings)\n  }\n  \n  # the mean is the sum(all pollutant readings) / count of readings\n  \n  currentSum / currentCount\n}",
+    "created" : 1467738144532.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2402525167",
+    "id" : "8F55E0BB",
+    "lastKnownWriteTime" : 1467740750,
+    "last_content_update" : 1467740750908,
+    "path" : "~/GitHub/RProgramming/pollutantmean.R",
+    "project_path" : "pollutantmean.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

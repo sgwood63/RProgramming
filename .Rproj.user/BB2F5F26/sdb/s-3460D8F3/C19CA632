@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "\nreadFrame <- function(directory, currentId) {\n  # Generate the file name for the id\n  if (currentId < 1 || currentId > 332) {\n    print(paste(\"Invalid id:\", currentId))\n    return(NULL)\n  } else if (currentId < 10) {\n    currentIdString <- paste0(c(\"00\", as.character(currentId)), collapse='')\n  } else if (currentId < 100) {\n    currentIdString <- paste0(c(\"0\", as.character(currentId)), collapse='')\n  } else {\n    currentIdString <- as.character(currentId)\n  }\n  \n  # create the full file name and path. check existence\n  \n  fileName <- paste0(c(directory, \"/\", currentIdString, \".csv\"), collapse='')\n  if (!file.exists(fileName)) {\n    print(paste(\"File does not exist: \", fileName))\n    return(NULL)\n  }\n  \n  # load the file into a frame\n  read.csv(fileName)\n}\n\n# Takes a directory of data files and a threshold for complete cases and\n# calculates the correlation between sulfate and nitrate for monitor locations\n# where the number of completely observed cases (on all variables) is greater\n# than the threshold. The function should return a vector of correlations for \n# the monitors that meet the threshold requirement. If no monitors meet the \n# threshold requirement, then the function should return a numeric vector of length 0.\n\ncorr <- function(directory, threshold = 0) {\n\n  result <- numeric()\n  \n  #for each location\n  for (currentLocation in 1:332) {\n    \n    # get the valid readings list for sulfate and nitrate\n    \n    readings <- readFrame(directory, currentLocation)\n    \n    if (is.null(readings)) {\n      next\n    }\n    \n    validReadings <- subset(readings, IsDate(Date) & \n                              !is.na(nitrate) &\n                              !is.na(sulfate) &\n                              ID == currentLocation)\n    \n    if (nrow(validReadings) > threshold) {\n      result[length(result) + 1] <- cor(validReadings$sulfate, validReadings$nitrate)\n    }\n  }\n  result\n}",
+    "created" : 1467748819602.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3878256455",
+    "id" : "C19CA632",
+    "lastKnownWriteTime" : 1467802996,
+    "last_content_update" : 1467802996057,
+    "path" : "~/GitHub/RProgramming/corr.R",
+    "project_path" : "corr.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
